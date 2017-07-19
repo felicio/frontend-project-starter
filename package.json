@@ -7,6 +7,7 @@
   "author": "dannytce <dankijkov@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack",
     "lint": "eslint src",
     "lint:autofix": "eslint --fix",
     "lint:css": "stylelint src/**/*.css",
@@ -19,10 +20,13 @@
   "pre-commit": "lint:staged",
   "devDependencies": {
     "@strv/eslint-config-javascript": "^7.1.0",
+    "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "lint-staged": "^4.0.2",
     "precommit": "^1.2.2",
+    "style-loader": "^0.18.2",
     "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint-config-standard": "^17.0.0",
+    "webpack": "^3.3.0"
   }
 }

@@ -6,6 +6,11 @@
   "repository": "git@github.com:strv-academy-2017/frontend-project-starter.git",
   "author": "dannytce <dankijkov@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:autofix": "eslint --fix",
+    "lint:css": "stylelint src/**/*.css",
+  },
   "devDependencies": {
     "@strv/eslint-config-javascript": "^7.1.0",
     "eslint": "^4.2.0",

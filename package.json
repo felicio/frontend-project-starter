@@ -1,0 +1,9 @@
+{
+  "name": "frontend-project-starter",
+  "version": "1.0.0",
+  "description": "Frontend Project Starter with basic setup",
+  "main": "index.js",
+  "repository": "git@github.com:strv-academy-2017/frontend-project-starter.git",
+  "author": "dannytce <dankijkov@gmail.com>",
+  "license": "MIT"
+}

@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:strv-academy-2017/frontend-project-starter.git",
   "author": "dannytce <dankijkov@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@strv/eslint-config-javascript": "^7.1.0",
+    "eslint": "^4.2.0"
+  }
 }

@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "dev": "webpack-dev-server --open",
     "lint": "eslint src",
     "lint:autofix": "eslint --fix",
     "lint:css": "stylelint src/**/*.css",
@@ -30,6 +31,7 @@
     "style-loader": "^0.18.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
   }
 }

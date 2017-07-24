@@ -24,6 +24,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss/,
+        enforce: 'pre',
+        loader: 'import-glob-loader',
+      },
+      {
         test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',

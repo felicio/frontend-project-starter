@@ -19,7 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style.[hash].css'),
   ],
   module: {
     rules: [

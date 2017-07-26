@@ -25,6 +25,7 @@
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.29.0",
     "import-glob-loader": "^1.1.0",
@@ -35,6 +36,7 @@
     "style-loader": "^0.18.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
+    "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   }

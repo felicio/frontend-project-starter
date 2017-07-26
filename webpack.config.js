@@ -24,6 +24,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|gif)/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
+      {
         test: /\.scss/,
         enforce: 'pre',
         loader: 'import-glob-loader',

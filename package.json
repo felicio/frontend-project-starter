@@ -7,7 +7,7 @@
   "author": "dannytce <dankijkov@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -p",
     "dev": "webpack-dev-server --open",
     "lint": "eslint src",
     "lint:autofix": "eslint --fix",

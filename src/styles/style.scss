@@ -5,18 +5,3 @@
 @import './forms/**/*';
 @import './layout/**/*';
 @import './sections/**/*';
-
-.video-wrapper {
-  width: 100%;
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}

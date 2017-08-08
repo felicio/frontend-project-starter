@@ -7,7 +7,9 @@
   "author": "dannytce <dankijkov@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prebuild": "npm run build:clean",
     "build": "webpack -p --config=internals/webpack/config.prod.js",
+    "build:clean": "rimraf ./dist",
     "stage": "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
     "dev": "webpack-dev-server --config=internals/webpack/config.dev.js --open",
     "lint": "eslint src",
@@ -22,7 +24,6 @@
   "pre-commit": "lint:staged",
   "devDependencies": {
     "@strv/eslint-config-javascript": "^7.1.0",
-    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "extract-text-webpack-plugin": "^3.0.0",
@@ -33,6 +34,7 @@
     "lint-staged": "^4.0.2",
     "node-sass": "^4.5.3",
     "precommit": "^1.2.2",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "stylelint": "^8.0.0",

@@ -20,6 +20,10 @@ class Todo extends React.Component {
     text: '',
   }
 
+  componentDidMount() {
+    this.input.focus()
+  }
+
   handleSubmit = event => {
     event.preventDefault()
 
@@ -68,6 +72,7 @@ class Todo extends React.Component {
             name="todo"
             value={text}
             placeholder={this.props.placeholder}
+            ref={input => this.input = input}
           />
           <button type="submit">Post Todo</button>
           <TodoList todos={items} />

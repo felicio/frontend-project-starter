@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-const Header = () => <h1>Frontend Starter Project - React</h1>
+const Header = (props) => <h1>Frontend Starter Project - {props.name}</h1>
 
-function Main() {
+function Main(props) {
+  console.log(props)
   return (
     <main>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam veritatis ipsa vel aut
-        corporis minus commodi temporibus voluptatem ipsum dolore?
+        {props.children}
       </p>
     </main>
   )
@@ -23,8 +23,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Main />
+        <Header name="React Blabla" />
+        <Main>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam veritatis ipsa vel aut
+        corporis minus commodi temporibus voluptatem ipsum dolore?
+        </Main>
         <Footer />
       </div>
     )

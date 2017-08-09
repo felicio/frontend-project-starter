@@ -17,6 +17,10 @@ class Clocks extends React.Component {
     this.setState({ date: new Date() })
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
   render() {
     return (
       <div>

@@ -21,10 +21,15 @@ class Clocks extends React.Component {
     clearInterval(this.timer)
   }
 
+  handleClick() {
+    alert("Hello")
+  }
+
   render() {
     return (
       <div>
         Current time is: {this.state.date.toLocaleTimeString()}
+        <button onClick={this.handleClick}>Click Me</button>
       </div>
     )
   }

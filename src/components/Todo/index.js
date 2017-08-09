@@ -63,13 +63,22 @@ class Todo extends React.Component {
       <div>
         <h1>TODO APP</h1>
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} name="todo" value={text} />
+          <input
+            onChange={this.handleChange}
+            name="todo"
+            value={text}
+            placeholder={this.props.placeholder}
+          />
           <button type="submit">Post Todo</button>
           <TodoList todos={items} />
         </form>
       </div>
     )
   }
+}
+
+Todo.defaultProps = {
+  placeholder: "Placeholder"
 }
 
 export default Todo

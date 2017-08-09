@@ -1,12 +1,8 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import App from './components/App'
+
 import './styles/style.scss'
 
-function component() {
-  const element = document.createElement('h1')
-
-  element.innerHTML = 'Frontend Project Starter'
-  element.classList.add('hello')
-
-  return element
-}
-
-document.body.appendChild(component())
+ReactDOM.render(<App />, document.getElementById('root'))

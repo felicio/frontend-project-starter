@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './styles.scss'
+
 const TodoList = ({ todos }) => (
   <ul>
     {todos.map(item =>
@@ -12,7 +14,7 @@ const TodoList = ({ todos }) => (
   </ul>
 )
 
-const TodoListItem = ({ text }) => <li>{text}</li>
+const TodoListItem = ({ text }) => <li className="todoList__item">{text}</li>
 
 TodoListItem.propTypes = {
   text: PropTypes.string.isRequired

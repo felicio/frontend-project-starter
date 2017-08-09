@@ -3,6 +3,10 @@ import React from 'react'
 import TodoList from './TodoList'
 import items from './data'
 
+const styles = {
+  input: { backgroundColor: 'yellow' }
+}
+
 class Todo extends React.Component {
   // constructor(props) {
   //   super(props)
@@ -73,6 +77,7 @@ class Todo extends React.Component {
             value={text}
             placeholder={this.props.placeholder}
             ref={input => this.input = input}
+            style={styles.input}
           />
           <button type="submit">Post Todo</button>
           <TodoList todos={items} />

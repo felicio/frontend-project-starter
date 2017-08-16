@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Home from '../Home'
 import About from '../About'
 import Topics from '../Topics'
+import NotFound from '../NotFound'
 
 const activeStyle = {
   color: 'red',
@@ -38,6 +39,7 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/:topics" component={Topics} />
+        <Route component={NotFound} />
         <hr />
         VS.
         <hr />
@@ -45,6 +47,7 @@ const App = () =>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/:topics" component={Topics} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </div>

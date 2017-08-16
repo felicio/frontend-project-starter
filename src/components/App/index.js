@@ -34,12 +34,18 @@ const App = () =>
             </NavLink>
           </li>
         </ul>
-
         <hr />
-
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
+        <Route path="/:topics" component={Topics} />
+        <hr />
+        VS.
+        <hr />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/:topics" component={Topics} />
+        </Switch>
       </div>
     </div>
   </BrowserRouter>

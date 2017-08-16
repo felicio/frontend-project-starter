@@ -5,3 +5,16 @@
 @import './forms/**/*';
 @import './layout/**/*';
 @import './sections/**/*';
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+}

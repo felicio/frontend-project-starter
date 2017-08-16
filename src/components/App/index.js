@@ -1,35 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-const Header = (props) => <h1>Frontend Starter Project - {props.name}</h1>
+const App = () =>
+  <div>
+    <h1>Frontend Starter Project - React</h1>
+  </div>
 
-function Main(props) {
-  console.log(props)
-  return (
-    <main>
-      <p>
-        {props.children}
-      </p>
-    </main>
-  )
-}
-
-class Footer extends Component {
-  render() {
-    return <footer>Copyright &copy; STRV Academy 2017</footer>
-  }
-}
-
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header name="React Blabla" />
-        <Main>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam veritatis ipsa vel aut
-        corporis minus commodi temporibus voluptatem ipsum dolore?
-        </Main>
-        <Footer />
-      </div>
-    )
-  }
-}
+export default App

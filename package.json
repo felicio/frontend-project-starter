@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run build:clean",
-    "build": "webpack -p --config=internals/webpack/config.prod.js",
+    "build": "webpack -p --config=internals/webpack/config.prod.js --progress",
     "build:clean": "rimraf ./dist",
     "stage": "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
     "dev": "webpack-dev-server --config=internals/webpack/config.dev.js --open",

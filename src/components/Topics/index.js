@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
 import Topic from './Topic'
 
 const Topics = props => {
   const { match } = props
 
-  console.log(props)
-
   return (
     <div>
+      <Helmet title="Topics" />
       <h2>Topics</h2>
       <ul>
         <li>

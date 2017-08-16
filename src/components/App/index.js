@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route, NavLink, BrowserRouter } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
 import Home from '../Home'
 import About from '../About'
@@ -12,6 +13,7 @@ const activeStyle = {
 const App = () =>
   <BrowserRouter>
     <div>
+      <Helmet titleTemplate="%s | Frontend Starter Project" />
       <h1>Frontend Starter Project - React</h1>
 
       <div>

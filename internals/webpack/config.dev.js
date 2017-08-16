@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = require('./config.base')({
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Enable HMR
     new HtmlWebpackPlugin({

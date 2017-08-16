@@ -65,5 +65,6 @@ module.exports = options => ({
   performance: options.performance || {},
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
 })

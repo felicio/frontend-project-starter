@@ -1,9 +1,13 @@
 import React from 'react'
-import { Route, Link, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, NavLink, BrowserRouter } from 'react-router-dom'
 
 import Home from '../Home'
 import About from '../About'
 import Topics from '../Topics'
+
+const activeStyle = {
+  color: 'red',
+}
 
 const App = () =>
   <BrowserRouter>
@@ -13,13 +17,19 @@ const App = () =>
       <div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" activeStyle={activeStyle}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about" activeStyle={activeStyle}>
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
+            <NavLink to="/topics" activeStyle={activeStyle}>
+              Topics
+            </NavLink>
           </li>
         </ul>
 

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -14,8 +16,8 @@ const navItems = [
 const Nav = () =>
   <nav>
     <ul>
-      {navItems.map(item =>
-        <li>
+      {navItems.map((item, index) =>
+        <li key={index}>
           <NavLink to={item.to} activeStyle={activeStyle}>
             {item.title}
           </NavLink>

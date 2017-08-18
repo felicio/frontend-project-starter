@@ -11,7 +11,9 @@ html {
 }
 
 html,
-body {
+body,
+#root,
+#root > div {
   height: 100%;
 }
 

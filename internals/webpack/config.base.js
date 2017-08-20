@@ -39,7 +39,7 @@ module.exports = options => ({
         test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
+          use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'],
           disable: process.env.NODE_ENV === 'development',
         }),
       },

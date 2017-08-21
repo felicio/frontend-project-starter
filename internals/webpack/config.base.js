@@ -15,6 +15,10 @@ module.exports = options => ({
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: ['html-loader?interpolate'],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',

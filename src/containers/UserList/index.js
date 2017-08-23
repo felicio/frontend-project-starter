@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchUsers, fetchUsersSuccess, fetchUsersFailure } from '../../data/users/actions'
+import { selectError, selectUsers, selectLoading, selectLoaded } from '../../data/users/selectors.js'
 import dummyData from './dummyData'
 
 
@@ -49,10 +50,10 @@ UserList.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  error: state.users.error,
-  users: state.users.data,
-  loading: state.users.loading,
-  loaded: state.users.loaded,
+  error: selectError(state),
+  users: selectUsers(state),
+  loading: selectLoading(state),
+  loaded: selectLoaded(state),
 })
 
 const mapDispatchToProps = {

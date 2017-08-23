@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addTodo } from '../../data/todo/actions'
 
-
 class App extends PureComponent {
   constructor() {
     super()
@@ -13,8 +12,9 @@ class App extends PureComponent {
     }
   }
 
-  handleInputChange = event =>
+  handleInputChange = event => {
     this.setState({ value: event.target.value })
+  }
 
   handleSubmit = event => {
     event.preventDefault()
@@ -28,7 +28,9 @@ class App extends PureComponent {
       <div>
         <ul>
           {todos.map((todo, index) =>
-            <li key={index}>{todo}</li>
+            <li key={index}>
+              {todo}
+            </li>
           )}
         </ul>
         <form onSubmit={this.handleSubmit}>
@@ -41,6 +43,7 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
+  addTodo: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 

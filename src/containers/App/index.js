@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addTodo } from '../../data/todo/actions'
+import UserList from '../UserList'
+
 
 class App extends PureComponent {
   constructor() {
@@ -22,23 +24,25 @@ class App extends PureComponent {
   }
 
   render() {
-    const { todos } = this.props
+    return <UserList />
 
-    return (
-      <div>
-        <ul>
-          {todos.map((todo, index) =>
-            <li key={index}>
-              {todo}
-            </li>
-          )}
-        </ul>
-        <form onSubmit={this.handleSubmit}>
-          <input value={this.state.value} onChange={this.handleInputChange} />
-          <button>add todo</button>
-        </form>
-      </div>
-    )
+    // const { todos } = this.props
+
+    // return (
+    //   <div>
+    //     <ul>
+    //       {todos.map((todo, index) =>
+    //         <li key={index}>
+    //           {todo}
+    //         </li>
+    //       )}
+    //     </ul>
+    //     <form onSubmit={this.handleSubmit}>
+    //       <input value={this.state.value} onChange={this.handleInputChange} />
+    //       <button>add todo</button>
+    //     </form>
+    //   </div>
+    // )
   }
 }
 

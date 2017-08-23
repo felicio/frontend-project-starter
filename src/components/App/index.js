@@ -8,6 +8,24 @@ import Topics from '../Topics'
 import NotFound from '../NotFound'
 import Nav from '../Nav'
 
+const RouterExample = () =>
+  <div>
+    <hr />
+    <Route exact path="/" component={Home} />
+    <Route path="/about" component={About} />
+    <Route path="/:topics" component={Topics} />
+    <Route component={NotFound} />
+    <hr />
+    VS.
+    <hr />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/:topics" component={Topics} />
+      <Route component={NotFound} />
+    </Switch>
+  </div>
+
 const App = () =>
   <BrowserRouter>
     <div>
@@ -16,22 +34,7 @@ const App = () =>
 
       <Nav />
 
-      <div>
-        <hr />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/:topics" component={Topics} />
-        <Route component={NotFound} />
-        <hr />
-        VS.
-        <hr />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/:topics" component={Topics} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
+      <RouterExample />
     </div>
   </BrowserRouter>
 

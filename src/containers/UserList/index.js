@@ -14,7 +14,7 @@ class UserList extends PureComponent {
     this.props.fetchUsers()
     setTimeout(() => {
       const random = Math.random()
-      if (random > 0.3) {
+      if (true) {
         this.props.fetchUsersSuccess(dummyData)
       }
       else {

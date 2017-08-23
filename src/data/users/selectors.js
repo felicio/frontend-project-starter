@@ -1,8 +1,11 @@
-export const selectError = state => state.users.error
+import { createSelector } from 'reselect'
 
-export const selectUsers = state => state.users.data
+const selectUsersSubstate = state => state.users
 
-export const selectLoading = state => state.users.loading
+export const selectError = createSelector(selectUsersSubstate, u => u.error)
 
-export const selectLoaded = state => state.users.loaded
+export const selectUsers = createSelector(selectUsersSubstate, u => u.data)
 
+export const selectLoading = createSelector(selectUsersSubstate, u => u.loading)
+
+export const selectLoaded = createSelector(selectUsersSubstate, u => u.loaded)

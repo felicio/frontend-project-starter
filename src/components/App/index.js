@@ -1,41 +1,55 @@
-import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import Helmet from 'react-helmet'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { addTodo } from '../../data/todo/actions'
 
-import Home from '../Home'
-import About from '../About'
-import Topics from '../Topics'
-import NotFound from '../NotFound'
-import Nav from '../Nav'
 
-const RouterExample = () =>
-  <div>
-    <hr />
-    <Route exact path="/" component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/:topics" component={Topics} />
-    <Route component={NotFound} />
-    <hr />
-    VS.
-    <hr />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/:topics" component={Topics} />
-      <Route component={NotFound} />
-    </Switch>
-  </div>
+class App extends PureComponent {
+  constructor() {
+    super()
 
-const App = () =>
-  <BrowserRouter>
-    <div>
-      <Helmet titleTemplate="%s | Frontend Starter Project" />
-      <h1>Frontend Starter Project - React</h1>
+    this.state = {
+      value: '',
+    }
+  }
 
-      <Nav />
+  handleInputChange = event =>
+    this.setState({ value: event.target.value })
 
-      <RouterExample />
-    </div>
-  </BrowserRouter>
+  handleSubmit = event => {
+    event.preventDefault()
+    this.props.addTodo(this.state.value)
+  }
 
-export default App
+  render() {
+    const { todos } = this.props
+
+    return (
+      <div>
+        <ul>
+          {todos.map((todo, index) =>
+            <li key={index}>{todo}</li>
+          )}
+        </ul>
+        <form onSubmit={this.handleSubmit}>
+          <input value={this.state.value} onChange={this.handleInputChange} />
+          <button>add todo</button>
+        </form>
+      </div>
+    )
+  }
+}
+
+App.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.string).isRequired,
+}
+
+const mapStateToProps = state => ({
+  todos: state,
+})
+
+const mapDispatchToProps = {
+  addTodo,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

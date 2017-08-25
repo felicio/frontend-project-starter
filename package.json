@@ -15,10 +15,11 @@
     "lint": "eslint src",
     "lint:autofix": "eslint --fix",
     "lint:css": "stylelint src/**/*.scss",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "prettier": "prettier --single-quote --no-semi --trailing-comma es5 --write '**/*.js'"
   },
   "lint-staged": {
-    "*.js": "lint",
+    "*.js": ["npm run prettier", "lint"],
     "*.scss": "lint:css"
   },
   "pre-commit": "lint:staged",
@@ -39,6 +40,7 @@
     "lint-staged": "^4.0.2",
     "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.5.3",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

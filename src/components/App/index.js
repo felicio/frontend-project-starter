@@ -29,11 +29,9 @@ const RouterExample = () =>
 const App = () =>
   <BrowserRouter>
     <div>
-      <Helmet titleTemplate="%s | Frontend Starter Project" />
+      <Helmet titleTemplate="%s | Frontend Starter Project" />{' '}
       <h1>Frontend Starter Project - React</h1>
-
       <Nav />
-
       <RouterExample />
     </div>
   </BrowserRouter>

@@ -2,40 +2,35 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchUsers, fetchUsersSuccess, fetchUsersFailure } from '../../data/users/actions'
-import { selectError, selectUsers, selectLoading, selectLoaded } from '../../data/users/selectors.js'
+import {
+  selectError,
+  selectUsers,
+  selectLoading,
+  selectLoaded,
+} from '../../data/users/selectors.js'
 import dummyData from './dummyData'
-
+import * as API from '../../api'
 
 class UserList extends PureComponent {
   componentWillMount() {
-    if (this.props.loaded) return
+    if (this.props.loaded) {
+      return
+    }
 
-
-    this.props.fetchUsers()
-    setTimeout(() => {
-      const random = Math.random()
-      if (true) {
-        this.props.fetchUsersSuccess(dummyData)
-      }
-      else {
-        this.props.fetchUsersFailure('posralo se to')
-      }
-    }, 2000)
+    API.getAllPeople().then(result => this.props.fetchUsersSuccess(result.results))
   }
 
   render() {
     const { users, loading, error } = this.props
-    if (error) return <div>{error}</div>
+    if (error) {
+      return <div>{error}</div>
+    }
 
-    if (loading) return <div>loading</div>
+    if (loading) {
+      return <div>loading</div>
+    }
 
-    return (
-      <ul>
-        {users.map(user =>
-          <li key={user.id}>{user.name}</li>
-        )}
-      </ul>
-    )
+    return <ul>{users.map(user => <li key={user.id}>{user.name}</li>)}</ul>
   }
 }
 

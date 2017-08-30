@@ -1,4 +1,4 @@
-import { compose, createStore, combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
 import todoReducer from './data/todo/reducer'
 import userReducer from './data/users/reducer'

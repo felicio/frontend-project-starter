@@ -7,8 +7,7 @@ import {
   selectUsers,
   selectLoading,
   selectLoaded,
-} from '../../data/users/selectors.js'
-import dummyData from './dummyData'
+} from '../../data/users/selectors'
 import * as API from '../../api'
 
 class UserList extends PureComponent {
@@ -35,9 +34,7 @@ class UserList extends PureComponent {
 }
 
 UserList.propTypes = {
-  error: PropTypes.string,
-  fetchUsers: PropTypes.func.isRequired,
-  fetchUsersFailure: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
   fetchUsersSuccess: PropTypes.func.isRequired,
   loaded: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,

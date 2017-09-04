@@ -14,7 +14,7 @@
       "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
     "dev": "webpack-dev-server --config=internals/webpack/config.dev.js --open",
     "lint": "eslint src",
-    "lint:autofix": "eslint --fix",
+    "lint:fix": "eslint src --fix",
     "lint:css": "stylelint src/**/*.scss",
     "lint:staged": "lint-staged",
     "prettier": "prettier --write '**/*.js'"

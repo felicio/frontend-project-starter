@@ -10,7 +10,8 @@
     "prebuild": "npm run build:clean",
     "build": "webpack -p --config=internals/webpack/config.prod.js --progress",
     "build:clean": "rimraf ./dist",
-    "stage": "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
+    "stage":
+      "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
     "dev": "webpack-dev-server --config=internals/webpack/config.dev.js --open",
     "lint": "eslint src",
     "lint:autofix": "eslint --fix",
@@ -19,12 +20,7 @@
     "prettier": "prettier --write '**/*.js'"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier",
-      "lint:autofix",
-      "git add",
-      "lint"
-    ],
+    "*.js": ["prettier", "eslint --fix", "git add"],
     "*.scss": "lint:css"
   },
   "pre-commit": "lint:staged",

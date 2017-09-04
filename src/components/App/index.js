@@ -8,7 +8,7 @@ import Topics from '../Topics'
 import NotFound from '../NotFound'
 import Nav from '../Nav'
 
-const RouterExample = () =>
+const RouterExample = () => (
   <div>
     <hr />
     <Route exact path="/" component={Home} />
@@ -25,8 +25,9 @@ const RouterExample = () =>
       <Route component={NotFound} />
     </Switch>
   </div>
+)
 
-const App = () =>
+const App = () => (
   <BrowserRouter>
     <div>
       <Helmet titleTemplate="%s | Frontend Starter Project" />{' '}
@@ -35,5 +36,6 @@ const App = () =>
       <RouterExample />
     </div>
   </BrowserRouter>
+)
 
 export default App

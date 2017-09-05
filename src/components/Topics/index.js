@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, Route, Prompt } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
+import H1 from '../H1'
 import Topic from './Topic'
 
 const Topics = props => {
@@ -13,7 +14,7 @@ const Topics = props => {
       <Prompt message="Are you sure you want to leave?" />
 
       <Helmet title="Topics" />
-      <h2>Topics</h2>
+      <H1>Topics</H1>
       <ul>
         <li>
           <Link to={`${match.url}/rendering`}>Rendering with React</Link>

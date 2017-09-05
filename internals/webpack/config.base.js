@@ -31,15 +31,10 @@ module.exports = options => ({
         ],
       },
       {
-        test: /\.scss/,
-        enforce: 'pre',
-        loader: 'import-glob-loader',
-      },
-      {
         test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
+          use: ['css-loader'],
           disable: process.env.NODE_ENV === 'development',
         }),
       },

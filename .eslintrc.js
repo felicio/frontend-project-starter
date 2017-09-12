@@ -4,6 +4,7 @@
 // directory, or a subdirectory if your project consists of both node.js and browser code.
 
 module.exports = {
+  parser: 'babel-eslint',
   extends: [
     '@strv/javascript/environments/react/v15',
     '@strv/javascript/environments/react/optional',

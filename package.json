@@ -11,7 +11,7 @@
     "build": "webpack -p --config=internals/webpack/config.prod.js --progress",
     "build:clean": "rimraf ./dist",
     "stage": "webpack-dev-server --config=internals/webpack/config.prod.js -p --open",
-    "dev": "webpack-dev-server --config=internals/webpack/config.dev.js --open",
+    "dev": "NODE_ENV=development webpack-dev-server --config=internals/webpack/config.dev.js --open",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "lint:css": "stylelint './src/**/*.js'",

@@ -35,7 +35,6 @@ module.exports = options => ({
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader'],
-          disable: process.env.NODE_ENV === 'development',
         }),
       },
     ],
@@ -50,7 +49,10 @@ module.exports = options => ({
       },
     }),
     new webpack.NamedModulesPlugin(),
-    new ExtractTextPlugin('style.[hash].css'),
+    new ExtractTextPlugin({
+      filename: 'style.[hash].css',
+      disable: process.env.NODE_ENV === 'development',
+    }),
   ]),
   resolve: {
     modules: ['src', 'node_modules'],
